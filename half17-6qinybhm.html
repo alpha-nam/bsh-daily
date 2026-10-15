@@ -261,31 +261,29 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택"><button type="button" role="tab" data-t="ans" aria-selected="false">정답<small>한눈에</small></button><span class="tabbrk"></span><button type="button" role="tab" data-t="q18" aria-selected="false">18번<small>빈칸</small></button><button type="button" role="tab" data-t="q19" aria-selected="false">19번<small>주제</small></button><button type="button" role="tab" data-t="q20" aria-selected="false">20번<small>삽입</small></button><button type="button" role="tab" data-t="q21" aria-selected="false">21번<small>제목</small></button><button type="button" role="tab" data-t="q22" aria-selected="false">22번<small>순서</small></button><button type="button" role="tab" data-t="q23" aria-selected="false">23번<small>어휘</small></button><button type="button" role="tab" data-t="q24" aria-selected="false">24번<small>빈칸</small></button><button type="button" role="tab" data-t="q25" aria-selected="false">25번<small>빈칸</small></button></nav>
   <div class="tabpanel" id="p-ans" role="tabpanel"><style>
-.ahead{display:block;font-family:var(--font-display);font-weight:800;font-size:19px;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent)}
-.lgrid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));row-gap:12px}
-.lq{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}
-.lq i{font-style:normal;font-family:var(--font-display);font-weight:800;font-size:13px;color:var(--fg);white-space:nowrap}
-.lq b{font-family:var(--font-display);font-weight:800;font-size:19px;line-height:1;color:var(--accent-ink)}
-.rrow{grid-template-columns:52px 74px 1fr auto;gap:8px;text-decoration:none;color:inherit;align-items:center;padding:12px 10px}
-.rn,.ra{font-family:var(--font-display);font-weight:800;font-size:17px;white-space:nowrap}
-.rn{color:var(--fg)}.ra{color:var(--accent-ink)}
-.rbar{display:grid;gap:4px;min-width:0}
-.pbar{display:block;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
-.pbar em{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--rose))}
-.rbar small{font-size:12px;color:var(--muted)}.rbar small b{color:var(--rose);font-weight:800}
-.rk{font-size:12.5px;font-weight:800;color:var(--accent-ink);background:var(--accent-soft);padding:2px 10px;border-radius:99px;white-space:nowrap}
+.ahead{display:block;font-family:var(--font-display);font-weight:800;font-size:19px;margin:0 0 12px;padding-left:12px;border-left:5px solid var(--accent)}
+.l5row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));padding:14px 0;border-bottom:1px solid var(--line)}
+.l5row:last-child{border-bottom:0}
+.l5c{display:flex;flex-direction:column;align-items:center;gap:7px;min-width:0}
+.l5c i{font-style:normal;font-family:var(--font-display);font-weight:800;font-size:15px;color:var(--fg)}
+.l5c b{font-family:var(--font-display);font-weight:800;font-size:26px;line-height:1;color:var(--accent-ink)}
+.cgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ccard{display:block;border:1px solid var(--line);border-radius:14px;padding:11px 4px 10px;text-align:center;background:var(--sheet-2);text-decoration:none;color:inherit}
+.cct b{font-family:var(--font-display);font-size:15px;font-weight:800;color:var(--fg)}
+.cct small{display:block;font-size:11.5px;color:var(--muted);margin-top:1px}
+.cca{font-family:var(--font-display);font-weight:800;font-size:28px;line-height:1;color:var(--accent-ink);margin:8px 0 6px}
+.ccr{font-size:11px;color:var(--rose);font-weight:700;white-space:nowrap}
 .en b{background-image:linear-gradient(transparent 58%,var(--amber-soft) 58%);padding:0 1px;font-weight:800}
 .field p b,.field li b{background-image:linear-gradient(transparent 62%,var(--accent-soft) 62%);padding:0 1px}
-@media (max-width:420px){.rrow{grid-template-columns:46px 66px 1fr auto;gap:6px}.rn,.ra{font-size:16px}.rk{padding:2px 8px;font-size:12px}}
 </style>
 <section class="card head"><span class="kicker">2017학년도 9월 평가원 모의평가</span><h1>하프모의고사 17회 정답</h1></section>
 <section class="card">
   <span class="ahead">듣기 1~17번</span>
-  <div class="lgrid"><div class="lq"><i>1번</i><b>③</b></div><div class="lq"><i>2번</i><b>④</b></div><div class="lq"><i>3번</i><b>①</b></div><div class="lq"><i>4번</i><b>①</b></div><div class="lq"><i>5번</i><b>③</b></div><div class="lq"><i>6번</i><b>④</b></div><div class="lq"><i>7번</i><b>④</b></div><div class="lq"><i>8번</i><b>①</b></div><div class="lq"><i>9번</i><b>②</b></div><div class="lq"><i>10번</i><b>⑤</b></div><div class="lq"><i>11번</i><b>⑤</b></div><div class="lq"><i>12번</i><b>②</b></div><div class="lq"><i>13번</i><b>④</b></div><div class="lq"><i>14번</i><b>②</b></div><div class="lq"><i>15번</i><b>③</b></div><div class="lq"><i>16번</i><b>②</b></div><div class="lq"><i>17번</i><b>⑤</b></div></div>
+  <div class="l5row"><div class="l5c"><i>1번</i><b>③</b></div><div class="l5c"><i>2번</i><b>④</b></div><div class="l5c"><i>3번</i><b>①</b></div><div class="l5c"><i>4번</i><b>①</b></div><div class="l5c"><i>5번</i><b>③</b></div></div><div class="l5row"><div class="l5c"><i>6번</i><b>④</b></div><div class="l5c"><i>7번</i><b>④</b></div><div class="l5c"><i>8번</i><b>①</b></div><div class="l5c"><i>9번</i><b>②</b></div><div class="l5c"><i>10번</i><b>⑤</b></div></div><div class="l5row"><div class="l5c"><i>11번</i><b>⑤</b></div><div class="l5c"><i>12번</i><b>②</b></div><div class="l5c"><i>13번</i><b>④</b></div><div class="l5c"><i>14번</i><b>②</b></div><div class="l5c"><i>15번</i><b>③</b></div></div><div class="l5row"><div class="l5c"><i>16번</i><b>②</b></div><div class="l5c"><i>17번</i><b>⑤</b></div></div>
 </section>
 <section class="card">
   <span class="ahead">독해 18~25번</span>
-  <div class="flow"><a class="step rrow" href="#q18" data-go="q18"><span class="rn">18번</span><span class="ra">정답 ①</span><span class="rbar"><span class="pbar"><em style="width:75.6%"></em></span><small>오답률 <b>75.6%</b></small></span><span class="rk">빈칸</span></a><a class="step rrow" href="#q19" data-go="q19"><span class="rn">19번</span><span class="ra">정답 ②</span><span class="rbar"><span class="pbar"><em style="width:72.2%"></em></span><small>오답률 <b>72.2%</b></small></span><span class="rk">주제</span></a><a class="step rrow" href="#q20" data-go="q20"><span class="rn">20번</span><span class="ra">정답 ⑤</span><span class="rbar"><span class="pbar"><em style="width:70.8%"></em></span><small>오답률 <b>70.8%</b></small></span><span class="rk">삽입</span></a><a class="step rrow" href="#q21" data-go="q21"><span class="rn">21번</span><span class="ra">정답 ④</span><span class="rbar"><span class="pbar"><em style="width:68.7%"></em></span><small>오답률 <b>68.7%</b></small></span><span class="rk">제목</span></a><a class="step rrow" href="#q22" data-go="q22"><span class="rn">22번</span><span class="ra">정답 ②</span><span class="rbar"><span class="pbar"><em style="width:68.4%"></em></span><small>오답률 <b>68.4%</b></small></span><span class="rk">순서</span></a><a class="step rrow" href="#q23" data-go="q23"><span class="rn">23번</span><span class="ra">정답 ⑤</span><span class="rbar"><span class="pbar"><em style="width:66.9%"></em></span><small>오답률 <b>66.9%</b></small></span><span class="rk">어휘</span></a><a class="step rrow" href="#q24" data-go="q24"><span class="rn">24번</span><span class="ra">정답 ④</span><span class="rbar"><span class="pbar"><em style="width:65.6%"></em></span><small>오답률 <b>65.6%</b></small></span><span class="rk">빈칸</span></a><a class="step rrow" href="#q25" data-go="q25"><span class="rn">25번</span><span class="ra">정답 ①</span><span class="rbar"><span class="pbar"><em style="width:65.0%"></em></span><small>오답률 <b>65.0%</b></small></span><span class="rk">빈칸</span></a></div>
+  <div class="cgrid"><a class="ccard" href="#q18" data-go="q18"><div class="cct"><b>18번</b><small>빈칸</small></div><div class="cca">①</div><div class="ccr">오답률 75.6%</div></a><a class="ccard" href="#q19" data-go="q19"><div class="cct"><b>19번</b><small>주제</small></div><div class="cca">②</div><div class="ccr">오답률 72.2%</div></a><a class="ccard" href="#q20" data-go="q20"><div class="cct"><b>20번</b><small>삽입</small></div><div class="cca">⑤</div><div class="ccr">오답률 70.8%</div></a><a class="ccard" href="#q21" data-go="q21"><div class="cct"><b>21번</b><small>제목</small></div><div class="cca">④</div><div class="ccr">오답률 68.7%</div></a><a class="ccard" href="#q22" data-go="q22"><div class="cct"><b>22번</b><small>순서</small></div><div class="cca">②</div><div class="ccr">오답률 68.4%</div></a><a class="ccard" href="#q23" data-go="q23"><div class="cct"><b>23번</b><small>어휘</small></div><div class="cca">⑤</div><div class="ccr">오답률 66.9%</div></a><a class="ccard" href="#q24" data-go="q24"><div class="cct"><b>24번</b><small>빈칸</small></div><div class="cca">④</div><div class="ccr">오답률 65.6%</div></a><a class="ccard" href="#q25" data-go="q25"><div class="cct"><b>25번</b><small>빈칸</small></div><div class="cca">①</div><div class="ccr">오답률 65.0%</div></a></div>
 </section></div><div class="tabpanel" id="p-q18" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 33번 · 하프 18번 · 오답률 75.6%</span>
