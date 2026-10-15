@@ -243,14 +243,14 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @media print{
   .tabs,.bar{display:none!important}
   .tabpanel{display:flex!important;break-before:page}
-  #q1{break-before:auto}
+  #q1,#ans{break-before:auto}
 }
 </style>
 </head>
 <body>
 <main class="wrap">
   <div class="bar">
-    <span><b>오늘의 빈순삽 Day 7 해설</b></span>
+    <span></span>
     <div class="toggle" role="group" aria-label="테마">
       <button type="button" id="t-light" aria-pressed="true">Light</button>
       <button type="button" id="t-dark" aria-pressed="false">Dark</button>
@@ -1955,6 +1955,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.t,true)})});
   window.addEventListener('hashchange',function(){show(location.hash.slice(1),false)});
   show(location.hash.slice(1),false);
+  function top0(){window.scrollTo(0,0)}
+  window.addEventListener('load',function(){top0();setTimeout(top0,60);setTimeout(top0,300)});
 })();
 </script>
 </body>
