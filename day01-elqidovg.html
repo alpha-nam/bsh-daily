@@ -233,7 +233,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @page{size:A4;margin:8mm 8mm}
 </style>
 <style>
-.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0;background:linear-gradient(var(--bg) 75%,transparent)}
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;margin:0 -16px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tabs:has(.tabbrk){position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;margin:0;padding:6px 0}
 .tabs button{font:inherit;font-weight:800;font-size:14px;border:1px solid var(--line);background:var(--sheet);color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow);display:inline-flex;gap:6px;align-items:center}
 .tabs button small{font-weight:700;font-size:12px;opacity:.85}
 .tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -244,7 +245,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @media print{
   .tabs,.bar{display:none!important}
   .tabpanel{display:flex!important;break-before:page}
-  #q1,#ans{break-before:auto}
+  #p-q1,#p-q18,#p-ans{break-before:auto}
 }
 </style>
 </head>
@@ -259,7 +260,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     <button type="button" id="t-print" class="print-btn">인쇄 / PDF</button>
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택"><button type="button" role="tab" data-t="q1" aria-selected="false">1번<small>순서</small></button><button type="button" role="tab" data-t="q2" aria-selected="false">2번<small>삽입</small></button><button type="button" role="tab" data-t="q3" aria-selected="false">3번<small>빈칸</small></button><button type="button" role="tab" data-t="q4" aria-selected="false">4번<small>빈칸</small></button></nav>
-  <div class="tabpanel" id="q1" role="tabpanel">
+  <div class="tabpanel" id="p-q1" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 10월 고3 전국연합학력평가 36번</span>
     <h1>오늘의 빈순삽 Day 1 · 1번 (글의 순서)</h1>
@@ -760,7 +761,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">(B)의 밑줄 친 <code>this capacity</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 사람들의 행동으로부터 감정을 추론하는 능력(주어진 글). 오답 후보: 말을 배우는 능력, 말에 집중하는 능력.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  Emotion-reading is not a (A) talent but a (B) skill.</p><p class="note">정답 방향: (A) inborn, (B) learnable. 오답 후보: (A) rare / (B) useless.</p></div></div><div class="vitem"><span class="pill c-accent">어휘</span><div><p class="stem">밑줄 친 atrophy와 의미가 가장 가까운 것은?  ① wither ② flourish ③ detect ④ intuit ⑤ absorb</p><p class="note">정답: ① wither.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem">(B)의 두 번째 문장을 <code>rather than</code>을 사용하여, 주어진 단어를 활용해 영작하시오. (pay, attention, say, do)</p><p class="note">채점 포인트: pay attention to, what people say rather than what they do.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q2" role="tabpanel">
+</div><div class="tabpanel" id="p-q2" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 10월 고3 전국연합학력평가 38번</span>
     <h1>오늘의 빈순삽 Day 1 - 2번 (문장 삽입)</h1>
@@ -1173,7 +1174,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem"><code>This, in turn, has a bearing on theories of agenda setting ...</code>의 밑줄 친 <code>This</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 인지 편향이 기억의 저장·인출에 왜곡을 일으킨다는 연구의 주장.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  Because memories are (A), people's responses to the news may reflect (B) rather than the original stories.</p><p class="note">정답 방향: (A) distorted, (B) altered memories. 오답 후보: (A) precise / (B) facts.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>~이 의제를 정하는 것은 원래의 뉴스가 아니라 개인 기억의 조작일 수 있다</code>를 it ~ that 강조 구문으로 영작하시오. (manipulation, memories, sets the agenda)</p><p class="note">채점 포인트: It may be the manipulation of memories that sets the agenda, not the original news stories.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q3" role="tabpanel">
+</div><div class="tabpanel" id="p-q3" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 10월 고3 전국연합학력평가 31번</span>
     <h1>오늘의 빈순삽 Day 1 - 3번 (빈칸 추론)</h1>
@@ -1708,7 +1709,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">빈칸 문장의 <code>the latter effect</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 쉬운 발견을 먼저 하기 때문에 남은 발견이 더 어려워지는 효과.</p></div></div><div class="vitem"><span class="pill c-accent">어휘</span><div><p class="stem">밑줄 친 predominates와 의미가 가장 가까운 것은?  ① prevails ② disappears ③ varies ④ scatters ⑤ fades</p><p class="note">정답: ① prevails.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>과거의 진보는 미래의 진보를 더 어렵게 만든다</code>를 make를 사용하여 영작하시오. (past progress, future progress, harder)</p><p class="note">채점 포인트: Past progress makes future progress harder. (make + 목적어 + 형용사)</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q4" role="tabpanel">
+</div><div class="tabpanel" id="p-q4" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 10월 고3 전국연합학력평가 32번</span>
     <h1>오늘의 빈순삽 Day 1 - 4번 (빈칸 추론)</h1>
@@ -2219,7 +2220,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     tabs.forEach(function(b){var on=b.dataset.t===id;if(on)hit=true;});
     if(!hit)id=tabs[0].dataset.t;
     tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===id)});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===id)});
+    panels.forEach(function(p){p.classList.toggle('on',p.id==='p-'+id)});
     if(push){try{history.replaceState(null,'','#'+id)}catch(e){}}
     window.scrollTo(0,0);
   }

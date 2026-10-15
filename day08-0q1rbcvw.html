@@ -233,7 +233,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @page{size:A4;margin:8mm 8mm}
 </style>
 <style>
-.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0;background:linear-gradient(var(--bg) 75%,transparent)}
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;margin:0 -16px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tabs:has(.tabbrk){position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;margin:0;padding:6px 0}
 .tabs button{font:inherit;font-weight:800;font-size:14px;border:1px solid var(--line);background:var(--sheet);color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow);display:inline-flex;gap:6px;align-items:center}
 .tabs button small{font-weight:700;font-size:12px;opacity:.85}
 .tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -244,7 +245,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @media print{
   .tabs,.bar{display:none!important}
   .tabpanel{display:flex!important;break-before:page}
-  #q1,#ans{break-before:auto}
+  #p-q1,#p-q18,#p-ans{break-before:auto}
 }
 </style>
 </head>
@@ -259,7 +260,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     <button type="button" id="t-print" class="print-btn">인쇄 / PDF</button>
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택"><button type="button" role="tab" data-t="q1" aria-selected="false">1번<small>순서</small></button><button type="button" role="tab" data-t="q2" aria-selected="false">2번<small>삽입</small></button><button type="button" role="tab" data-t="q3" aria-selected="false">3번<small>빈칸</small></button><button type="button" role="tab" data-t="q4" aria-selected="false">4번<small>빈칸</small></button></nav>
-  <div class="tabpanel" id="q1" role="tabpanel">
+  <div class="tabpanel" id="p-q1" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 3월 고3 전국연합학력평가 37번</span>
     <h1>오늘의 빈순삽 Day 8 · 1번 (글의 순서)</h1>
@@ -658,7 +659,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">(A)의 밑줄 친 <code>these designs</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 뉴 어바니즘이 내세우는 걷기 좋은 거리, 고밀도 설계, 복합 개발.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  Each approach to sustainable urban planning faces (A) for neglecting either human needs or the (B) environment.</p><p class="note">정답 방향: (A) criticism, (B) natural.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>prioritize A over B</code>를 사용하여 <code>비평가들은 그들이 인간의 필요보다 미적 관심을 우선한다고 주장한다</code>를 영작하시오. (critics, aesthetic concerns, human needs)</p><p class="note">채점 포인트: Critics claim that they prioritize aesthetic concerns over human needs.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q2" role="tabpanel">
+</div><div class="tabpanel" id="p-q2" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 3월 고3 전국연합학력평가 39번</span>
     <h1>오늘의 빈순삽 Day 8 · 2번 (문장 삽입)</h1>
@@ -1077,7 +1078,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">문장 5의 밑줄 친 <code>These pictures</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 원근법으로 그려진 그림들.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  Perspective paintings show how the world (A) from one viewpoint, unlike earlier art that depicted what the artist (B).</p><p class="note">정답 방향: (A) looks, (B) knew.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>stand in contrast to</code>를 사용하여 <code>이것은 이전의 구상 미술과 대조된다</code>를 영작하시오. (earlier figurative art)</p><p class="note">채점 포인트: This stands in contrast to earlier figurative art.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q3" role="tabpanel">
+</div><div class="tabpanel" id="p-q3" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 3월 고3 전국연합학력평가 33번</span>
     <h1>오늘의 빈순삽 Day 8 · 3번 (빈칸 추론)</h1>
@@ -1602,7 +1603,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">추론</span><div><p class="stem">윗글에서 필자가 비 예시를 든 목적으로 가장 적절한 것은?</p><p class="note">정답 방향: 통제할 수 없는 것에 화내는 것이 어리석음을 보여 주고, 타인의 행동에도 같은 논리를 적용하기 위해.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  The Stoics advised us to focus on what we can (A) and not to react emotionally to what is beyond our (B).</p><p class="note">정답 방향: (A) control(change), (B) control(power).</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>not A any more than B</code>를 사용하여 <code>우리는 비를 멈출 수 없듯이 그 사람을 바꿀 수 없다</code>를 영작하시오. (change that person, stop the rain)</p><p class="note">채점 포인트: We can't change that person any more than we can stop the rain.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q4" role="tabpanel">
+</div><div class="tabpanel" id="p-q4" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 3월 고3 전국연합학력평가 34번</span>
     <h1>오늘의 빈순삽 Day 8 · 4번 (빈칸 추론)</h1>
@@ -2050,7 +2051,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     tabs.forEach(function(b){var on=b.dataset.t===id;if(on)hit=true;});
     if(!hit)id=tabs[0].dataset.t;
     tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===id)});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===id)});
+    panels.forEach(function(p){p.classList.toggle('on',p.id==='p-'+id)});
     if(push){try{history.replaceState(null,'','#'+id)}catch(e){}}
     window.scrollTo(0,0);
   }

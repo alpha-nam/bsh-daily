@@ -233,7 +233,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @page{size:A4;margin:8mm 8mm}
 </style>
 <style>
-.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0;background:linear-gradient(var(--bg) 75%,transparent)}
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;margin:0 -16px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tabs:has(.tabbrk){position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;margin:0;padding:6px 0}
 .tabs button{font:inherit;font-weight:800;font-size:14px;border:1px solid var(--line);background:var(--sheet);color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow);display:inline-flex;gap:6px;align-items:center}
 .tabs button small{font-weight:700;font-size:12px;opacity:.85}
 .tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -244,7 +245,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @media print{
   .tabs,.bar{display:none!important}
   .tabpanel{display:flex!important;break-before:page}
-  #q1,#ans{break-before:auto}
+  #p-q1,#p-q18,#p-ans{break-before:auto}
 }
 </style>
 </head>
@@ -259,7 +260,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     <button type="button" id="t-print" class="print-btn">인쇄 / PDF</button>
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택"><button type="button" role="tab" data-t="q1" aria-selected="false">1번<small>순서</small></button><button type="button" role="tab" data-t="q2" aria-selected="false">2번<small>삽입</small></button><button type="button" role="tab" data-t="q3" aria-selected="false">3번<small>빈칸</small></button><button type="button" role="tab" data-t="q4" aria-selected="false">4번<small>빈칸</small></button></nav>
-  <div class="tabpanel" id="q1" role="tabpanel">
+  <div class="tabpanel" id="p-q1" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 7월 고3 전국연합학력평가 37번</span>
     <h1>오늘의 빈순삽 Day 4 · 1번 (글의 순서)</h1>
@@ -685,7 +686,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">(B)의 밑줄 친 <code>That extra carbon</code>이 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 건강한 생태계에서 식물이 필요한 양보다 더 많이 흡수한 탄소((C)의 마지막 내용).</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  Healthy plant communities (A) carbon, but when they are (B), the stored carbon returns to the atmosphere.</p><p class="note">정답 방향: (A) store, (B) disturbed.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>more ... than</code>을 사용하여 <code>식물은 필요한 것보다 더 많은 탄소를 대기에서 끌어낸다</code>를 영작하시오. (plants, pull, carbon, atmosphere, need)</p><p class="note">채점 포인트: Plants pull more carbon out of the atmosphere than they need.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q2" role="tabpanel">
+</div><div class="tabpanel" id="p-q2" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 7월 고3 전국연합학력평가 39번</span>
     <h1>오늘의 빈순삽 Day 4 · 2번 (문장 삽입)</h1>
@@ -1115,7 +1116,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">문장 5의 밑줄 친 <code>This</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 과정이 제거되면 행동을 계속하지 않는 현상(문장 4).</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  External support can start a change, but without (A) motivation it may not (B).</p><p class="note">정답 방향: (A) internal(intrinsic), (B) last.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>rather than</code>을 사용하여 <code>이것은 주인 의식이 아니라 수동적인 참여이다</code>를 영작하시오. (passive engagement, ownership)</p><p class="note">채점 포인트: This is passive engagement rather than ownership.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q3" role="tabpanel">
+</div><div class="tabpanel" id="p-q3" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 7월 고3 전국연합학력평가 33번</span>
     <h1>오늘의 빈순삽 Day 4 · 3번 (빈칸 추론)</h1>
@@ -1538,7 +1539,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">추론</span><div><p class="stem">윗글에서 기업의 성공 기준으로 제시된 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 연간 사용 중인 제품 수(products kept in use per year).</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  In a circular economy, reduced demand for (A) products is offset by growing demand for (B).</p><p class="note">정답 방향: (A) new, (B) maintenance and repair.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>focus on A rather than on B</code>를 사용하여 <code>새 비즈니스 모델은 새 제품을 만드는 것이 아니라 제품을 유지하는 데 집중해야 한다</code>를 영작하시오. (new business models, maintaining, making)</p><p class="note">채점 포인트: New business models should focus on maintaining products rather than on making new products.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q4" role="tabpanel">
+</div><div class="tabpanel" id="p-q4" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 7월 고3 전국연합학력평가 34번</span>
     <h1>오늘의 빈순삽 Day 4 · 4번 (빈칸 추론)</h1>
@@ -2030,7 +2031,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     tabs.forEach(function(b){var on=b.dataset.t===id;if(on)hit=true;});
     if(!hit)id=tabs[0].dataset.t;
     tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===id)});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===id)});
+    panels.forEach(function(p){p.classList.toggle('on',p.id==='p-'+id)});
     if(push){try{history.replaceState(null,'','#'+id)}catch(e){}}
     window.scrollTo(0,0);
   }

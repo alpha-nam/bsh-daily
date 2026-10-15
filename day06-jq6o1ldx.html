@@ -233,7 +233,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @page{size:A4;margin:8mm 8mm}
 </style>
 <style>
-.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0;background:linear-gradient(var(--bg) 75%,transparent)}
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;margin:0 -16px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tabs:has(.tabbrk){position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;margin:0;padding:6px 0}
 .tabs button{font:inherit;font-weight:800;font-size:14px;border:1px solid var(--line);background:var(--sheet);color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow);display:inline-flex;gap:6px;align-items:center}
 .tabs button small{font-weight:700;font-size:12px;opacity:.85}
 .tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -244,7 +245,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @media print{
   .tabs,.bar{display:none!important}
   .tabpanel{display:flex!important;break-before:page}
-  #q1,#ans{break-before:auto}
+  #p-q1,#p-q18,#p-ans{break-before:auto}
 }
 </style>
 </head>
@@ -259,7 +260,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     <button type="button" id="t-print" class="print-btn">인쇄 / PDF</button>
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택"><button type="button" role="tab" data-t="q1" aria-selected="false">1번<small>순서</small></button><button type="button" role="tab" data-t="q2" aria-selected="false">2번<small>삽입</small></button><button type="button" role="tab" data-t="q3" aria-selected="false">3번<small>빈칸</small></button><button type="button" role="tab" data-t="q4" aria-selected="false">4번<small>빈칸</small></button></nav>
-  <div class="tabpanel" id="q1" role="tabpanel">
+  <div class="tabpanel" id="p-q1" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 5월 고3 전국연합학력평가 37번</span>
     <h1>오늘의 빈순삽 Day 6 · 1번 (글의 순서)</h1>
@@ -751,7 +752,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">(A)의 밑줄 친 <code>they</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 귀와 눈이 받는 감각 신호들.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  During sleep, sensory signals still (A) the brain, but the thalamus (B) them from reaching the cortex.</p><p class="note">정답 방향: (A) enter, (B) blocks.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>Should</code>를 사용한 도치로 <code>그것들이 통과 허가를 받으면 피질로 보내진다</code>를 영작하시오. (granted permission, sent, cortex)</p><p class="note">채점 포인트: Should they be granted permission to pass, they are sent to the cortex.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q2" role="tabpanel">
+</div><div class="tabpanel" id="p-q2" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 5월 고3 전국연합학력평가 39번</span>
     <h1>오늘의 빈순삽 Day 6 · 2번 (문장 삽입)</h1>
@@ -1154,7 +1155,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">문장 5의 밑줄 친 <code>This</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 가까운 물체에 초점을 맞추지 못하는 것(주어진 문장).</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  Cats see (A) well at night, but they lose accuracy in the daytime and at (B) range.</p><p class="note">정답 방향: (A) exceptionally, (B) close.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>pay for A with B</code>를 사용하여 <code>고양이는 야간 정확성의 대가를 낮 시력으로 치른다</code>를 영작하시오. (nighttime accuracy, daytime vision)</p><p class="note">채점 포인트: Cats pay for their nighttime accuracy with less accurate daytime vision.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q3" role="tabpanel">
+</div><div class="tabpanel" id="p-q3" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 5월 고3 전국연합학력평가 33번</span>
     <h1>오늘의 빈순삽 Day 6 · 3번 (빈칸 추론)</h1>
@@ -1560,7 +1561,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">추론</span><div><p class="stem">윗글에서 뚜껑이 너무 멀리 튀지 않고 다시 올라오는 이유로 가장 적절한 것은?</p><p class="note">정답 방향: 목의 약한 지점이 일정하게 구부러졌다가 되돌아오기 때문.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  Nepenthes gracilis uses the energy of (A) to throw insects into its (B).</p><p class="note">정답 방향: (A) raindrops, (B) digestive juices.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>exploit</code>를 사용하여 <code>이 식물은 외부 에너지를 목적을 위해 이용할 수 있다</code>를 영작하시오. (this plant, external energy, purpose)</p><p class="note">채점 포인트: This plant can exploit external energy for a purpose.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q4" role="tabpanel">
+</div><div class="tabpanel" id="p-q4" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 5월 고3 전국연합학력평가 34번</span>
     <h1>오늘의 빈순삽 Day 6 · 4번 (빈칸 추론)</h1>
@@ -2013,7 +2014,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     tabs.forEach(function(b){var on=b.dataset.t===id;if(on)hit=true;});
     if(!hit)id=tabs[0].dataset.t;
     tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===id)});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===id)});
+    panels.forEach(function(p){p.classList.toggle('on',p.id==='p-'+id)});
     if(push){try{history.replaceState(null,'','#'+id)}catch(e){}}
     window.scrollTo(0,0);
   }

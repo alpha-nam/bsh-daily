@@ -233,7 +233,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @page{size:A4;margin:8mm 8mm}
 </style>
 <style>
-.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0;background:linear-gradient(var(--bg) 75%,transparent)}
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;margin:0 -16px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tabs:has(.tabbrk){position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;margin:0;padding:6px 0}
 .tabs button{font:inherit;font-weight:800;font-size:14px;border:1px solid var(--line);background:var(--sheet);color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow);display:inline-flex;gap:6px;align-items:center}
 .tabs button small{font-weight:700;font-size:12px;opacity:.85}
 .tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -244,7 +245,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @media print{
   .tabs,.bar{display:none!important}
   .tabpanel{display:flex!important;break-before:page}
-  #q1,#ans{break-before:auto}
+  #p-q1,#p-q18,#p-ans{break-before:auto}
 }
 </style>
 </head>
@@ -259,7 +260,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     <button type="button" id="t-print" class="print-btn">인쇄 / PDF</button>
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택"><button type="button" role="tab" data-t="ans" aria-selected="false">정답<small>한눈에</small></button><span class="tabbrk"></span><button type="button" role="tab" data-t="q18" aria-selected="false">18번<small>빈칸</small></button><button type="button" role="tab" data-t="q19" aria-selected="false">19번<small>주제</small></button><button type="button" role="tab" data-t="q20" aria-selected="false">20번<small>삽입</small></button><button type="button" role="tab" data-t="q21" aria-selected="false">21번<small>제목</small></button><button type="button" role="tab" data-t="q22" aria-selected="false">22번<small>순서</small></button><button type="button" role="tab" data-t="q23" aria-selected="false">23번<small>어휘</small></button><button type="button" role="tab" data-t="q24" aria-selected="false">24번<small>빈칸</small></button><button type="button" role="tab" data-t="q25" aria-selected="false">25번<small>빈칸</small></button></nav>
-  <div class="tabpanel" id="ans" role="tabpanel"><style>
+  <div class="tabpanel" id="p-ans" role="tabpanel"><style>
 .ahead{display:block;font-family:var(--font-display);font-weight:800;font-size:19px;margin:0 0 14px;padding-left:12px;border-left:5px solid var(--accent)}
 .lgrid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));row-gap:12px}
 .lq{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}
@@ -269,8 +270,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 .rn,.ra{font-family:var(--font-display);font-weight:800;font-size:17px;white-space:nowrap}
 .rn{color:var(--fg)}.ra{color:var(--accent-ink)}
 .rbar{display:grid;gap:4px;min-width:0}
-.bar{display:block;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
-.bar em{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--rose))}
+.pbar{display:block;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.pbar em{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--rose))}
 .rbar small{font-size:12px;color:var(--muted)}.rbar small b{color:var(--rose);font-weight:800}
 .rk{font-size:12.5px;font-weight:800;color:var(--accent-ink);background:var(--accent-soft);padding:2px 10px;border-radius:99px;white-space:nowrap}
 .en b{background-image:linear-gradient(transparent 58%,var(--amber-soft) 58%);padding:0 1px;font-weight:800}
@@ -284,8 +285,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </section>
 <section class="card">
   <span class="ahead">독해 18~25번</span>
-  <div class="flow"><a class="step rrow" href="#q18" data-go="q18"><span class="rn">18번</span><span class="ra">정답 ①</span><span class="rbar"><span class="bar"><em style="width:75.6%"></em></span><small>오답률 <b>75.6%</b></small></span><span class="rk">빈칸</span></a><a class="step rrow" href="#q19" data-go="q19"><span class="rn">19번</span><span class="ra">정답 ②</span><span class="rbar"><span class="bar"><em style="width:72.2%"></em></span><small>오답률 <b>72.2%</b></small></span><span class="rk">주제</span></a><a class="step rrow" href="#q20" data-go="q20"><span class="rn">20번</span><span class="ra">정답 ⑤</span><span class="rbar"><span class="bar"><em style="width:70.8%"></em></span><small>오답률 <b>70.8%</b></small></span><span class="rk">삽입</span></a><a class="step rrow" href="#q21" data-go="q21"><span class="rn">21번</span><span class="ra">정답 ④</span><span class="rbar"><span class="bar"><em style="width:68.7%"></em></span><small>오답률 <b>68.7%</b></small></span><span class="rk">제목</span></a><a class="step rrow" href="#q22" data-go="q22"><span class="rn">22번</span><span class="ra">정답 ②</span><span class="rbar"><span class="bar"><em style="width:68.4%"></em></span><small>오답률 <b>68.4%</b></small></span><span class="rk">순서</span></a><a class="step rrow" href="#q23" data-go="q23"><span class="rn">23번</span><span class="ra">정답 ⑤</span><span class="rbar"><span class="bar"><em style="width:66.9%"></em></span><small>오답률 <b>66.9%</b></small></span><span class="rk">어휘</span></a><a class="step rrow" href="#q24" data-go="q24"><span class="rn">24번</span><span class="ra">정답 ④</span><span class="rbar"><span class="bar"><em style="width:65.6%"></em></span><small>오답률 <b>65.6%</b></small></span><span class="rk">빈칸</span></a><a class="step rrow" href="#q25" data-go="q25"><span class="rn">25번</span><span class="ra">정답 ①</span><span class="rbar"><span class="bar"><em style="width:65.0%"></em></span><small>오답률 <b>65.0%</b></small></span><span class="rk">빈칸</span></a></div>
-</section></div><div class="tabpanel" id="q18" role="tabpanel">
+  <div class="flow"><a class="step rrow" href="#q18" data-go="q18"><span class="rn">18번</span><span class="ra">정답 ①</span><span class="rbar"><span class="pbar"><em style="width:75.6%"></em></span><small>오답률 <b>75.6%</b></small></span><span class="rk">빈칸</span></a><a class="step rrow" href="#q19" data-go="q19"><span class="rn">19번</span><span class="ra">정답 ②</span><span class="rbar"><span class="pbar"><em style="width:72.2%"></em></span><small>오답률 <b>72.2%</b></small></span><span class="rk">주제</span></a><a class="step rrow" href="#q20" data-go="q20"><span class="rn">20번</span><span class="ra">정답 ⑤</span><span class="rbar"><span class="pbar"><em style="width:70.8%"></em></span><small>오답률 <b>70.8%</b></small></span><span class="rk">삽입</span></a><a class="step rrow" href="#q21" data-go="q21"><span class="rn">21번</span><span class="ra">정답 ④</span><span class="rbar"><span class="pbar"><em style="width:68.7%"></em></span><small>오답률 <b>68.7%</b></small></span><span class="rk">제목</span></a><a class="step rrow" href="#q22" data-go="q22"><span class="rn">22번</span><span class="ra">정답 ②</span><span class="rbar"><span class="pbar"><em style="width:68.4%"></em></span><small>오답률 <b>68.4%</b></small></span><span class="rk">순서</span></a><a class="step rrow" href="#q23" data-go="q23"><span class="rn">23번</span><span class="ra">정답 ⑤</span><span class="rbar"><span class="pbar"><em style="width:66.9%"></em></span><small>오답률 <b>66.9%</b></small></span><span class="rk">어휘</span></a><a class="step rrow" href="#q24" data-go="q24"><span class="rn">24번</span><span class="ra">정답 ④</span><span class="rbar"><span class="pbar"><em style="width:65.6%"></em></span><small>오답률 <b>65.6%</b></small></span><span class="rk">빈칸</span></a><a class="step rrow" href="#q25" data-go="q25"><span class="rn">25번</span><span class="ra">정답 ①</span><span class="rbar"><span class="pbar"><em style="width:65.0%"></em></span><small>오답률 <b>65.0%</b></small></span><span class="rk">빈칸</span></a></div>
+</section></div><div class="tabpanel" id="p-q18" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 33번 · 하프 18번 · 오답률 75.6%</span>
     <h1>하프모의고사 17회 · 18번 (빈칸 추론)</h1>
@@ -690,7 +691,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">문장 6의 <code>These exceptions</code>가 가리키는 것은?</p><p class="note">정답 방향: 문제가 아이에게 영향을 주지 않았던 때.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>help A V</code>를 이용해 <code>이 예외들이 아이가 새 이야기를 만들도록 돕는다</code>를 영작하시오.</p><p class="note">채점 포인트: These exceptions help the child create a new story.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q19" role="tabpanel">
+</div><div class="tabpanel" id="p-q19" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 22번 · 하프 19번 · 오답률 72.2%</span>
     <h1>하프모의고사 17회 · 19번 (주제 추론)</h1>
@@ -1090,7 +1091,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">Insight does not come from (A) experience but from (B) thinking.</p><p class="note">정답 방향: (A) ignoring, (B) analytical.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>Nevertheless</code>를 사용해 <code>통찰은 분석적 사고의 결과이다</code>를 영작하시오.</p><p class="note">채점 포인트: Nevertheless, insight is the result of analytical thinking.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q20" role="tabpanel">
+</div><div class="tabpanel" id="p-q20" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 39번 · 하프 20번 · 오답률 70.8%</span>
     <h1>하프모의고사 17회 · 20번 (문장 삽입)</h1>
@@ -1492,7 +1493,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">문장 7의 <code>this</code>가 가리키는 것은?</p><p class="note">정답 방향: 긴 곡을 빠르고 정확하게 적는 것이 쉽지 않다는 점.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>no light matter</code>를 사용해 <code>곡을 정확히 쓰는 것은 쉬운 일이 아니다</code>를 영작하시오.</p><p class="note">채점 포인트: It is no light matter to write a piece correctly.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q21" role="tabpanel">
+</div><div class="tabpanel" id="p-q21" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 23번 · 하프 21번 · 오답률 68.7%</span>
     <h1>하프모의고사 17회 · 21번 (제목 추론)</h1>
@@ -1893,7 +1894,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">Governments require firms to (A) information, and new rules aim to improve its (B).</p><p class="note">정답 방향: (A) disclose, (B) reliability.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>require that</code>을 이용해 <code>정부는 기업이 정보를 제공하도록 요구한다</code>를 영작하시오.</p><p class="note">채점 포인트: Governments require that firms provide information.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q22" role="tabpanel">
+</div><div class="tabpanel" id="p-q22" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 37번 · 하프 22번 · 오답률 68.4%</span>
     <h1>하프모의고사 17회 · 22번 (글의 순서)</h1>
@@ -2362,7 +2363,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">(A)의 <code>This view</code>가 가리키는 것은?</p><p class="note">정답 방향: 발명·발견은 처음 만든 개인의 공이라는 견해.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>In contrast to</code>를 이용해 <code>다양성과는 대조적으로 의미는 서양의 가치에 기반한다</code>를 영작하시오.</p><p class="note">채점 포인트: In contrast to the diversity, the meaning is based on Western values.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q23" role="tabpanel">
+</div><div class="tabpanel" id="p-q23" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 29번 · 하프 23번 · 오답률 66.9%</span>
     <h1>하프모의고사 17회 · 23번 (문맥 속 어휘)</h1>
@@ -2811,7 +2812,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">어휘</span><div><p class="stem">(C)에 <code>inseparable</code>이 적절하지 않은 이유를 설명하시오.</p><p class="note">정답 방향: 예술 작품은 관련 없는 것으로부터 깔끔하게 정제되기 때문.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>be satisfied with</code>를 이용해 <code>그들은 의미를 파악하는 것에 만족한다</code>를 영작하시오.</p><p class="note">채점 포인트: They are satisfied with grasping the meaning.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q24" role="tabpanel">
+</div><div class="tabpanel" id="p-q24" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 31번 · 하프 24번 · 오답률 65.6%</span>
     <h1>하프모의고사 17회 · 24번 (빈칸 추론)</h1>
@@ -3260,7 +3261,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">Creativity depends less on (A) than on how much one (B).</p><p class="note">정답 방향: (A) talent, (B) produces(tries).</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>not A so much as B</code>를 사용해 <code>창의성은 재능이라기보다 생산성이다</code>를 영작하시오.</p><p class="note">채점 포인트: Creativity is not talent so much as productivity.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q25" role="tabpanel">
+</div><div class="tabpanel" id="p-q25" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 34번 · 하프 25번 · 오답률 65.0%</span>
     <h1>하프모의고사 17회 · 25번 (빈칸 추론)</h1>
@@ -3643,7 +3644,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     tabs.forEach(function(b){var on=b.dataset.t===id;if(on)hit=true;});
     if(!hit)id=tabs[0].dataset.t;
     tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===id)});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===id)});
+    panels.forEach(function(p){p.classList.toggle('on',p.id==='p-'+id)});
     if(push){try{history.replaceState(null,'','#'+id)}catch(e){}}
     window.scrollTo(0,0);
   }

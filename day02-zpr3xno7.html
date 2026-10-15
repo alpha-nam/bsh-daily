@@ -233,7 +233,8 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @page{size:A4;margin:8mm 8mm}
 </style>
 <style>
-.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 0;background:linear-gradient(var(--bg) 75%,transparent)}
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px;margin:0 -16px;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tabs:has(.tabbrk){position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;margin:0;padding:6px 0}
 .tabs button{font:inherit;font-weight:800;font-size:14px;border:1px solid var(--line);background:var(--sheet);color:var(--muted);padding:9px 16px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow);display:inline-flex;gap:6px;align-items:center}
 .tabs button small{font-weight:700;font-size:12px;opacity:.85}
 .tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -244,7 +245,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 @media print{
   .tabs,.bar{display:none!important}
   .tabpanel{display:flex!important;break-before:page}
-  #q1,#ans{break-before:auto}
+  #p-q1,#p-q18,#p-ans{break-before:auto}
 }
 </style>
 </head>
@@ -259,7 +260,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     <button type="button" id="t-print" class="print-btn">인쇄 / PDF</button>
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택"><button type="button" role="tab" data-t="q1" aria-selected="false">1번<small>순서</small></button><button type="button" role="tab" data-t="q2" aria-selected="false">2번<small>삽입</small></button><button type="button" role="tab" data-t="q3" aria-selected="false">3번<small>빈칸</small></button><button type="button" role="tab" data-t="q4" aria-selected="false">4번<small>빈칸</small></button></nav>
-  <div class="tabpanel" id="q1" role="tabpanel">
+  <div class="tabpanel" id="p-q1" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 10월 고3 전국연합학력평가 37번</span>
     <h1>오늘의 빈순삽 Day 2 · 1번 (글의 순서)</h1>
@@ -784,7 +785,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">(B)의 밑줄 친 <code>This feeling</code>이 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 경이감(wonder). 오답 후보: 확신의 느낌, 호기심.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  A feeling of knowing can be (A), while a feeling of wonder is (B) because it reveals gaps in our knowledge.</p><p class="note">정답 방향: (A) mistaken, (B) useful. 오답 후보: (A) reliable / (B) harmful.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>~에 속하다</code>를 뜻하는 구동사를 사용하여 <code>호기심과 경이감은 이 범주에 속한다</code>를 영작하시오. (curiosity, wonder, category)</p><p class="note">채점 포인트: Curiosity and wonder fall into this category.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q2" role="tabpanel">
+</div><div class="tabpanel" id="p-q2" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 10월 고3 전국연합학력평가 39번</span>
     <h1>오늘의 빈순삽 Day 2 · 2번 (문장 삽입)</h1>
@@ -1199,7 +1200,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">지칭 추론</span><div><p class="stem">문장 6의 밑줄 친 <code>These simple actions</code>가 가리키는 것으로 가장 적절한 것은?</p><p class="note">정답 방향: 소뇌가 손의 움직임을 지시해 공과 손의 상대적 위치를 맞추는 동작.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  The cerebellum helps us catch a ball by (A) the relative position of hand and ball, and it can also be used to (B) the result of an action.</p><p class="note">정답 방향: (A) matching, (B) predict.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>enable</code>을 사용하여 <code>이 단순한 동작들 덕분에 우리는 방정식을 풀지 않고도 공을 잡을 수 있다</code>를 영작하시오. (simple actions, catch, without solving)</p><p class="note">채점 포인트: These simple actions enable us to catch the ball without solving any equations.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q3" role="tabpanel">
+</div><div class="tabpanel" id="p-q3" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 10월 고3 전국연합학력평가 33번</span>
     <h1>오늘의 빈순삽 Day 2 · 3번 (빈칸 추론)</h1>
@@ -1584,7 +1585,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 </span>수능형 변형문제 추천</h2>
   <div class="vgroup"><span class="vgroup-title">객관식 변형</span><div class="vitem"><span class="pill c-accent">추론</span><div><p class="stem">윗글의 실험에서 영아가 머리로 패널을 누른 이유에 대한 설명으로 가장 적절한 것은?</p><p class="note">정답 방향: 성인의 목표와 수단을 이해했기 때문. 오답 후보: 손이 닿지 않았기 때문.</p></div></div><div class="vitem"><span class="pill c-accent">요약문 완성</span><div><p class="stem">윗글의 내용을 요약하는 문장의 빈칸 (A), (B)에 들어갈 말로 가장 적절한 것은?  Infants imitate the (A) behind an action, not just the (B) movements.</p><p class="note">정답 방향: (A) intention, (B) physical.</p></div></div></div><div class="vgroup"><span class="vgroup-title">서술형 변형</span><div class="vitem"><span class="pill c-amber">조건 영작</span><div><p class="stem"><code>not just</code>를 사용하여 <code>아이들은 움직임을 모방할 뿐 아니라 의도를 재현하려 한다</code>를 영작하시오. (imitate, movements, reproduce, intended)</p><p class="note">채점 포인트: Children do not just imitate movements, they attempt to reproduce intended actions.</p></div></div></div>
 </section>
-</div><div class="tabpanel" id="q4" role="tabpanel">
+</div><div class="tabpanel" id="p-q4" role="tabpanel">
 <section class="card head">
     <span class="kicker">2024학년도 10월 고3 전국연합학력평가 34번</span>
     <h1>오늘의 빈순삽 Day 2 · 4번 (빈칸 추론)</h1>
@@ -2011,7 +2012,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     tabs.forEach(function(b){var on=b.dataset.t===id;if(on)hit=true;});
     if(!hit)id=tabs[0].dataset.t;
     tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===id)});
-    panels.forEach(function(p){p.classList.toggle('on',p.id===id)});
+    panels.forEach(function(p){p.classList.toggle('on',p.id==='p-'+id)});
     if(push){try{history.replaceState(null,'','#'+id)}catch(e){}}
     window.scrollTo(0,0);
   }
