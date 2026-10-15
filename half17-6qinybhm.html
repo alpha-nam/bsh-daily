@@ -259,22 +259,41 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택"><button type="button" role="tab" data-t="ans" aria-selected="false">정답<small>한눈에</small></button><button type="button" role="tab" data-t="q18" aria-selected="false">18번<small>빈칸</small></button><button type="button" role="tab" data-t="q19" aria-selected="false">19번<small>주제</small></button><button type="button" role="tab" data-t="q20" aria-selected="false">20번<small>삽입</small></button><button type="button" role="tab" data-t="q21" aria-selected="false">21번<small>제목</small></button><button type="button" role="tab" data-t="q22" aria-selected="false">22번<small>순서</small></button><button type="button" role="tab" data-t="q23" aria-selected="false">23번<small>어휘</small></button><button type="button" role="tab" data-t="q24" aria-selected="false">24번<small>빈칸</small></button><button type="button" role="tab" data-t="q25" aria-selected="false">25번<small>빈칸</small></button></nav>
   <div class="tabpanel" id="ans" role="tabpanel"><style>
-.ansgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:6px}
-.ac{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:10px 4px;border:1px solid var(--line);border-radius:14px;background:var(--sheet-2);text-decoration:none;color:var(--fg);min-height:64px}
-.ac b{font-family:var(--font-display);font-size:12px;color:var(--muted)}
-.ac span{font-family:var(--font-display);font-size:24px;font-weight:800;color:var(--accent-ink)}
-.ac small{font-size:11px;color:var(--rose);font-weight:700}
-.ac.hot{border:2px solid var(--accent);background:var(--accent-soft)}
-.ansnote{margin:10px 2px 0;color:var(--muted);font-size:13px;line-height:1.6}
-.sec-title{font-family:var(--font-display);font-weight:800;font-size:15px;margin:18px 2px 4px}
+.hero{position:relative;overflow:hidden;border-radius:22px;padding:26px 24px 22px;color:#f4efe3;
+  background:radial-gradient(120% 140% at 85% -10%,#2b3f9e 0%,#14205a 55%,#0b1235 100%);
+  box-shadow:0 10px 30px rgba(11,18,53,.28)}
+.hero::after{content:"";position:absolute;inset:8px;border:1px solid rgba(214,181,109,.45);border-radius:16px;pointer-events:none}
+.hero .eb{font-family:"Plus Jakarta Sans",sans-serif;font-size:11px;letter-spacing:.28em;color:#d6b56d;font-weight:700}
+.hero h1{margin:8px 0 2px;font-family:"Noto Serif KR","Noto Sans KR",serif;font-weight:900;font-size:34px;line-height:1.15;letter-spacing:-.02em;color:#fff}
+.hero h1 em{font-style:normal;color:#e6cf9c}
+.hero p{margin:8px 0 0;font-size:12.5px;color:rgba(244,239,227,.75);letter-spacing:.02em}
+.sheet{background:var(--sheet);border:1px solid var(--line);border-radius:22px;padding:6px 22px 8px;box-shadow:var(--shadow)}
+.sh-t{display:flex;align-items:baseline;justify-content:space-between;padding:18px 0 10px;border-bottom:2px solid var(--fg)}
+.sh-t h2{margin:0;display:block;font-family:"Noto Serif KR",serif;font-size:17px;font-weight:800}
+.sh-t span{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
+.lc{display:flex;align-items:baseline;justify-content:space-between;padding:13px 10px;border-bottom:1px solid var(--line)}
+.lc i{font-style:normal;font-family:"Plus Jakarta Sans",sans-serif;font-size:12px;color:var(--muted);font-weight:600}
+.lc b{font-family:"Plus Jakarta Sans","Noto Sans KR",sans-serif;font-size:21px;font-weight:800;color:var(--accent-ink)}
+.rr{display:grid;grid-template-columns:34px 44px 1fr auto;gap:10px;align-items:center;padding:13px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--fg)}
+.rr:active{background:var(--accent-soft)}
+.rn{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:15px;color:var(--muted)}
+.ra{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:19px;font-family:"Plus Jakarta Sans","Noto Sans KR",sans-serif}
+.rb{display:grid;gap:5px}
+.bar{display:block;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar em{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#f59e0b,#e5484d)}
+.rb small{font-size:11.5px;color:var(--muted)}
+.rb small b{color:var(--rose);font-weight:800}
+.go{font-size:12px;font-weight:700;color:var(--accent-ink);white-space:nowrap}
+.snote{margin:0;padding:12px 2px 14px;font-size:12px;line-height:1.65;color:var(--muted)}
 </style>
-<section class="card head"><span class="kicker">2017학년도 9월 평가원 모의평가</span><h1>하프모의고사 17회 정답</h1></section>
-<section class="card">
-  <p class="sec-title" style="margin-top:0">듣기 1~17번</p>
-  <div class="ansgrid"><div class="ac"><b>1</b><span>③</span></div><div class="ac"><b>2</b><span>④</span></div><div class="ac"><b>3</b><span>①</span></div><div class="ac"><b>4</b><span>①</span></div><div class="ac"><b>5</b><span>③</span></div><div class="ac"><b>6</b><span>④</span></div><div class="ac"><b>7</b><span>④</span></div><div class="ac"><b>8</b><span>①</span></div><div class="ac"><b>9</b><span>②</span></div><div class="ac"><b>10</b><span>⑤</span></div><div class="ac"><b>11</b><span>⑤</span></div><div class="ac"><b>12</b><span>②</span></div><div class="ac"><b>13</b><span>④</span></div><div class="ac"><b>14</b><span>②</span></div><div class="ac"><b>15</b><span>③</span></div><div class="ac"><b>16</b><span>②</span></div><div class="ac"><b>17</b><span>⑤</span></div></div>
-  <p class="sec-title">독해 18~25번 (파란 칸을 누르면 분석 해설로 이동)</p>
-  <div class="ansgrid"><a class="ac hot" href="#q18" data-go="q18"><b>18</b><span>①</span><small>오답률 75.6%</small></a><a class="ac hot" href="#q19" data-go="q19"><b>19</b><span>②</span><small>오답률 72.2%</small></a><a class="ac hot" href="#q20" data-go="q20"><b>20</b><span>⑤</span><small>오답률 70.8%</small></a><a class="ac hot" href="#q21" data-go="q21"><b>21</b><span>④</span><small>오답률 68.7%</small></a><a class="ac hot" href="#q22" data-go="q22"><b>22</b><span>②</span><small>오답률 68.4%</small></a><a class="ac hot" href="#q23" data-go="q23"><b>23</b><span>⑤</span><small>오답률 66.9%</small></a><a class="ac hot" href="#q24" data-go="q24"><b>24</b><span>④</span><small>오답률 65.6%</small></a><a class="ac hot" href="#q25" data-go="q25"><b>25</b><span>①</span><small>오답률 65.0%</small></a></div>
-  <p class="ansnote">18~25번은 원래 시험(2017학년도 9월 평가원 모의평가)에서 오답률이 가장 높았던 8문항을 오답률 순서대로 배열한 것입니다. 파란 칸을 누르면 그 문항의 분석 해설로 이동합니다.</p>
+<section class="hero"><div class="eb">HALF MOCK TEST</div><h1>17회 <em>정답</em></h1><p>2017학년도 9월 평가원 모의평가</p></section>
+<section class="sheet">
+  <div class="sh-t"><h2>듣기 1 – 17</h2><span>LISTENING</span></div>
+  <div class="lgrid"><div class="lc"><i>01</i><b>③</b></div><div class="lc"><i>02</i><b>④</b></div><div class="lc"><i>03</i><b>①</b></div><div class="lc"><i>04</i><b>①</b></div><div class="lc"><i>05</i><b>③</b></div><div class="lc"><i>06</i><b>④</b></div><div class="lc"><i>07</i><b>④</b></div><div class="lc"><i>08</i><b>①</b></div><div class="lc"><i>09</i><b>②</b></div><div class="lc"><i>10</i><b>⑤</b></div><div class="lc"><i>11</i><b>⑤</b></div><div class="lc"><i>12</i><b>②</b></div><div class="lc"><i>13</i><b>④</b></div><div class="lc"><i>14</i><b>②</b></div><div class="lc"><i>15</i><b>③</b></div><div class="lc"><i>16</i><b>②</b></div><div class="lc"><i>17</i><b>⑤</b></div></div>
+  <div class="sh-t" style="margin-top:14px"><h2>독해 18 – 25</h2><span>오답률 높은 순 · 누르면 해설</span></div>
+  <a class="rr" href="#q18" data-go="q18"><span class="rn">18</span><span class="ra">①</span><span class="rb"><span class="bar"><em style="width:75%"></em></span><small>오답률 <b>75.6%</b></small></span><span class="go">해설 ›</span></a><a class="rr" href="#q19" data-go="q19"><span class="rn">19</span><span class="ra">②</span><span class="rb"><span class="bar"><em style="width:72%"></em></span><small>오답률 <b>72.2%</b></small></span><span class="go">해설 ›</span></a><a class="rr" href="#q20" data-go="q20"><span class="rn">20</span><span class="ra">⑤</span><span class="rb"><span class="bar"><em style="width:70%"></em></span><small>오답률 <b>70.8%</b></small></span><span class="go">해설 ›</span></a><a class="rr" href="#q21" data-go="q21"><span class="rn">21</span><span class="ra">④</span><span class="rb"><span class="bar"><em style="width:68%"></em></span><small>오답률 <b>68.7%</b></small></span><span class="go">해설 ›</span></a><a class="rr" href="#q22" data-go="q22"><span class="rn">22</span><span class="ra">②</span><span class="rb"><span class="bar"><em style="width:68%"></em></span><small>오답률 <b>68.4%</b></small></span><span class="go">해설 ›</span></a><a class="rr" href="#q23" data-go="q23"><span class="rn">23</span><span class="ra">⑤</span><span class="rb"><span class="bar"><em style="width:66%"></em></span><small>오답률 <b>66.9%</b></small></span><span class="go">해설 ›</span></a><a class="rr" href="#q24" data-go="q24"><span class="rn">24</span><span class="ra">④</span><span class="rb"><span class="bar"><em style="width:65%"></em></span><small>오답률 <b>65.6%</b></small></span><span class="go">해설 ›</span></a><a class="rr" href="#q25" data-go="q25"><span class="rn">25</span><span class="ra">①</span><span class="rb"><span class="bar"><em style="width:65%"></em></span><small>오답률 <b>65.0%</b></small></span><span class="go">해설 ›</span></a>
+  <p class="snote">18~25번은 원래 시험(2017학년도 9월 평가원 모의평가)에서 오답률이 가장 높았던 8문항을 오답률 순서대로 배열한 것입니다. 각 줄을 누르면 그 문항의 분석 해설로 이동합니다.</p>
 </section></div><div class="tabpanel" id="q18" role="tabpanel">
 <section class="card head">
     <span class="kicker">2017학년도 9월 평가원 모의평가 33번 · 하프 18번 · 오답률 75.6%</span>
