@@ -249,6 +249,10 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 }
 
 .tabs button{width:76px;justify-content:center;padding:9px 0}
+/* 문항이 많을 때(28~45번) 탭이 여러 줄로 쌓여 화면을 가리지 않도록 한 줄로 두고 옆으로 민다(2026-11-09) */
+.tabs{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto}
 .vitem p.stem .chs{display:block;margin-top:8px}
 .vitem p.stem .ch{display:block;font-style:normal;font-weight:500;padding-left:1.7em;text-indent:-1.7em;line-height:1.7}
 .msg{padding:28px;text-align:center;color:var(--muted)}</style>
@@ -413,6 +417,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
         btns.forEach(function(b){b.setAttribute('aria-selected',b.dataset.t===id)});
         ps.forEach(function(p){p.classList.toggle('on',p.id==='p-'+id)});
         if(push){try{history.replaceState(null,'','#'+id)}catch(e){}}
+        var sb=btns.filter(function(b){return b.dataset.t===id})[0];if(sb&&tabsEl.scrollWidth>tabsEl.clientWidth)tabsEl.scrollLeft=sb.offsetLeft-(tabsEl.clientWidth-sb.offsetWidth)/2;
         window.scrollTo(0,0);
       }
       btns.forEach(function(b){b.onclick=function(){show(b.dataset.t,true)}});
