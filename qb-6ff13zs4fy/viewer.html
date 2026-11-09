@@ -401,7 +401,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     document.title=set.title||'해설';var tt=document.getElementById('ttl');if(tt)tt.textContent=set.title&&set.title!=='해설'?set.title:'';
     return Promise.all(set.items.map(function(it){
       if(!/^[A-Za-z0-9._-]{1,64}$/.test(it.id)||/\.\./.test(it.id))return Promise.resolve(null);
-      return fetch('cards/'+it.id+'.html').then(function(r){return r.ok?r.text():null}).catch(function(){return null})
+      return fetch('cards/'+it.id+'.html').then(function(r){return r.ok?r.text():null}).then(function(t){return t&&t.replace(/(<h1>[^<]*?· ?)[0-9]+(?:[~-][0-9]+)?번 ?[(](.*)[)](<[/]h1>)/,'$1$2$3')}).catch(function(){return null})
     })).then(function(frags){
       var tabs='',panels='';
       set.items.forEach(function(it,i){
