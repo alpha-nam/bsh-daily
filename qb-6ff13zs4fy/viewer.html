@@ -258,7 +258,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 .vitem p.stem .ch{display:block;font-style:normal;font-weight:500;padding-left:1.7em;text-indent:-1.7em;line-height:1.7}
 .msg{padding:28px;text-align:center;color:var(--muted)}
 /* 문제은행 앱 안에서 열 때(?app=1)만: Light/Dark 줄 오른쪽 끝의 인쇄 단추(2026-11-26) */
-.appbtns{display:none;gap:8px}.in-app .appbtns{display:inline-flex}.in-app .bar{justify-content:flex-end}.in-app .bar #ttl{margin-right:auto}
+.appbtns{display:none;gap:8px}.in-app.one .tabs{display:none}.in-app .appbtns{display:inline-flex}.in-app .bar{justify-content:flex-end}.in-app .bar #ttl{margin-right:auto}
 :root.in-app[data-theme="light"]{--bg:#fff;--bg-glow:#fff}:root.in-app[data-theme="light"] body{background:#fff;background-image:none}
 .appbtns button{font-size:13px;padding:9px 22px;white-space:nowrap}.appbtns #a-print,.appbtns #a-print:hover{background:#15803D;border-color:#15803D;color:#fff}.appbtns #a-print:hover{background:#116932}</style>
 </head>
@@ -419,8 +419,9 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
         panels+='<div class="tabpanel" id="p-'+id+'" role="tabpanel">'+(frags[i]||'<section class="card"><p class="msg">이 문항의 해설은 아직 준비되지 않았습니다.</p></section>')+'</div>';
       });
       tabsEl.innerHTML=tabs;panelsEl.innerHTML=panels;
+      var inApp=root.classList.contains('in-app');if(inApp&&set.items.length===1)root.classList.add('one');
       var btns=[].slice.call(tabsEl.querySelectorAll('button'));
-      btns.forEach(function(b,i){b.firstChild.textContent=set.items[i].no+'번';if(b.querySelector('small'))b.querySelector('small').textContent=set.items[i].kind||''});
+      btns.forEach(function(b,i){var real=inApp&&/^[0-9]{4}[.][0-9]{2}-([0-9]+)$/.exec(set.items[i].id);b.firstChild.textContent=(real?+real[1]:set.items[i].no)+'번';if(b.querySelector('small'))b.querySelector('small').textContent=set.items[i].kind||''});
       var ps=[].slice.call(document.querySelectorAll('.tabpanel'));
       function show(id,push){
         if(!btns.some(function(b){return b.dataset.t===id}))id=btns[0].dataset.t;
