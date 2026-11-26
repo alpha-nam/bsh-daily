@@ -257,10 +257,10 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 .vitem p.stem .chs{display:block;margin-top:8px}
 .vitem p.stem .ch{display:block;font-style:normal;font-weight:500;padding-left:1.7em;text-indent:-1.7em;line-height:1.7}
 .msg{padding:28px;text-align:center;color:var(--muted)}
-/* 문제은행 앱 안에서 열 때(?app=1)만: Light/Dark 줄 오른쪽 끝의 새 창·인쇄 단추(2026-11-26) */
+/* 문제은행 앱 안에서 열 때(?app=1)만: Light/Dark 줄 오른쪽 끝의 인쇄 단추(2026-11-26) */
 .appbtns{display:none;gap:8px}.in-app .appbtns{display:inline-flex}.in-app .bar{justify-content:flex-end}.in-app .bar #ttl{margin-right:auto}
 :root.in-app[data-theme="light"]{--bg:#fff;--bg-glow:#fff}:root.in-app[data-theme="light"] body{background:#fff;background-image:none}
-.appbtns button{font-size:13px;padding:9px 18px;white-space:nowrap}.appbtns #a-print{background:var(--accent);border-color:var(--accent);color:#fff}</style>
+.appbtns button{font-size:13px;padding:9px 22px;white-space:nowrap}.appbtns #a-print,.appbtns #a-print:hover{background:#15803D;border-color:#15803D;color:#fff}.appbtns #a-print:hover{background:#116932}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><g id="i28f2f75997">
@@ -366,7 +366,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 <main class="wrap">
   <div class="bar"><span id="ttl"></span>
     <div class="toggle" role="group" aria-label="테마"><button type="button" id="t-light" aria-pressed="true">Light</button><button type="button" id="t-dark" aria-pressed="false">Dark</button></div>
-    <span class="appbtns"><button type="button" class="print-btn" id="a-new">새 창</button><button type="button" class="print-btn" id="a-print">인쇄</button></span>
+    <span class="appbtns"><button type="button" class="print-btn" id="a-print">인쇄</button></span>
   </div>
   <nav class="tabs" role="tablist" aria-label="문항 선택" id="tabs"></nav>
   <div id="panels"><p class="msg">불러오는 중…</p></div>
@@ -380,7 +380,6 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
   if(qs.get('app')==='1'){
     root.classList.add('in-app');theme('light');
     document.getElementById('a-print').onclick=function(){window.print()};
-    document.getElementById('a-new').onclick=function(){var u=new URL(location.href);u.searchParams.delete('app');window.open(u.href,'_blank','noopener')};
   }
   var panelsEl=document.getElementById('panels'),tabsEl=document.getElementById('tabs');
   function msg(t){panelsEl.innerHTML='<p class="msg"></p>';panelsEl.firstChild.textContent=t}
@@ -411,7 +410,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
     document.title=set.title||'해설';var tt=document.getElementById('ttl');if(tt)tt.textContent=set.title&&set.title!=='해설'?set.title:'';
     return Promise.all(set.items.map(function(it){
       if(!/^[A-Za-z0-9._-]{1,64}$/.test(it.id)||/\.\./.test(it.id))return Promise.resolve(null);
-      return fetch('cards/'+it.id+'.html').then(function(r){return r.ok?r.text():null}).then(function(t){return t&&t.replace(/(<h1>[^<]*?· ?)[0-9]+(?:[~-][0-9]+)?번 ?[(](.*)[)](<[/]h1>)/,'$1$2$3')}).catch(function(){return null})
+      return fetch('cards/'+it.id+'.html').then(function(r){return r.ok?r.text():null}).then(function(t){return t&&t.replace(/(<h1>[^<]*?· ?)[0-9]+(?:[~-][0-9]+)?번 ?[(](.*)[)](<[/]h1>)/,'$1$2$3').replace(/(<h1>[^<]*?)((?:Mini )?Test) ([0-9]+) · (?:Mini )?Test ([0-9]+)번?(?: · ([0-9]+)번)?/,function(m,head,word,unit,q,last){return head+word+' '+unit+' · '+(last||q)+'번'})}).catch(function(){return null})
     })).then(function(frags){
       var tabs='',panels='';
       set.items.forEach(function(it,i){
