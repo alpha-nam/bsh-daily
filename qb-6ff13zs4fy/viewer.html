@@ -259,6 +259,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
 .msg{padding:28px;text-align:center;color:var(--muted)}
 /* 문제은행 앱 안에서 열 때(?app=1)만: Light/Dark 줄 오른쪽 끝의 새 창·인쇄 단추(2026-11-26) */
 .appbtns{display:none;gap:8px}.in-app .appbtns{display:inline-flex}.in-app .bar{justify-content:flex-end}.in-app .bar #ttl{margin-right:auto}
+:root.in-app[data-theme="light"]{--bg:#fff;--bg-glow:#fff}:root.in-app[data-theme="light"] body{background:#fff;background-image:none}
 .appbtns button{font-size:13px;padding:9px 18px;white-space:nowrap}.appbtns #a-print{background:var(--accent);border-color:var(--accent);color:#fff}</style>
 </head>
 <body>
@@ -377,7 +378,7 @@ mark.d{background:var(--rose-soft);color:var(--fg);padding:0 4px;border-radius:5
   L.onclick=function(){theme('light')};D.onclick=function(){theme('dark')};
   var qs=new URLSearchParams(location.search),code=qs.get('s')||'',ql=qs.get('q'),cl=qs.get('c'),pl=qs.get('p');
   if(qs.get('app')==='1'){
-    root.classList.add('in-app');
+    root.classList.add('in-app');theme('light');
     document.getElementById('a-print').onclick=function(){window.print()};
     document.getElementById('a-new').onclick=function(){var u=new URL(location.href);u.searchParams.delete('app');window.open(u.href,'_blank','noopener')};
   }
